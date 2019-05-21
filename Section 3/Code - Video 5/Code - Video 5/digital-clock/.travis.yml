@@ -1,0 +1,23 @@
+# See https://github.com/electron-userland/electron-builder/wiki/Publishing-Artifacts
+# for the most up to date recommended .travis.yml
+osx_image: xcode8.3
+sudo: false
+language: node_js
+node_js: '8'
+env:
+- ELECTRON_CACHE=$HOME/.electron
+matrix:
+  include:
+  - os: osx
+cache:
+  directories:
+  - node_modules
+  - "$HOME/Library/Caches/electron"
+  - "$HOME/Library/Caches/electron-builder"
+install:
+- npm install
+script:
+- npm run dist
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"

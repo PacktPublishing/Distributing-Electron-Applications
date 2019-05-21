@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Clock</title>
+  <style>
+
+* {
+  -webkit-app-region: drag;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e2320;
+}
+
+#clock {
+  font-family: monospace;
+  font-size: 400%;
+  font-weight: bolder;
+  color: #b1b1b1;
+}
+  </style>
+</head>
+<body>
+  <div id="clock">Foo</div>
+  <script>
+    const clockElement = document.getElementById('clock');
+    const setCurrentTime = () => {
+      clockElement.innerHTML = (new Date()).toLocaleTimeString();
+    };
+
+    setCurrentTime();
+    setInterval(setCurrentTime, 1000);
+  </script>
+</body>
+</html>

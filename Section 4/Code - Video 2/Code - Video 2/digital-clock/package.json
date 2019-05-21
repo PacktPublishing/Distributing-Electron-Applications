@@ -1,0 +1,36 @@
+{
+  "name": "digital-clock",
+  "version": "1.0.0",
+  "description": "Digital Clock is a dummy Electron application that displays the current time",
+  "author": "John Doe <johndoe@example.com>",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "homepage": "digitalclock.com",
+  "build": {
+    "appId": "com.example.digitalclock",
+    "productName": "Digital Clock",
+    "win": {
+      "target": [ "nsis", "portable" ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "license": "LICENSE",
+      "runAfterFinish": true
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
+    }
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "1.6.6",
+    "electron-builder": "^18.0.1"
+  }
+}

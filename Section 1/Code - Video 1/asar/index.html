@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Asar example</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <p id="arguments" style="word-break: break-all;"></p>
+  <script>
+    document.querySelector("#arguments").innerHTML = process.mainModule.filename;
+  </script>
+</body>
+</html>

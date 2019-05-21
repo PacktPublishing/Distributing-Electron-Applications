@@ -1,0 +1,21 @@
+# See https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build
+# for the most up to date recommended appveyor.yml
+platform:
+  - x64
+
+cache:
+  - node_modules
+  - '%APPDATA%\npm-cache'
+  - '%USERPROFILE%\.electron'
+
+init:
+  - git config --global core.autocrlf input
+
+install:
+  - ps: Install-Product node 6 $env:Platform
+  - npm install
+
+build_script:
+  - npm run dist
+
+test: off

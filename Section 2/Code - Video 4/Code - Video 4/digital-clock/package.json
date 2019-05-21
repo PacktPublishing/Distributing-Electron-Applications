@@ -1,0 +1,94 @@
+{
+  "name": "digital-clock",
+  "version": "1.0.0",
+  "description": "Digital Clock is a dummy Electron application that displays the current time",
+  "author": "John Doe <johndoe@example.com>",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "homepage": "digitalclock.com",
+  "build": {
+    "appId": "com.example.digitalclock",
+    "productName": "Digital Clock",
+    "publish": [
+      {
+        "provider": "github",
+        "repo": "digital-clock",
+        "owner": "jviotti"
+      }
+    ],
+    "linux": {
+      "category": "Utils",
+      "icon": "assets/icons",
+      "packageCategory": "utils",
+      "maintainer": "Jane Doe <janedoe@example.com>",
+      "target": [ "deb", "rpm", "AppImage", "snap" ],
+      "synopsis": "A minimalistic digital clock rendered in monospace font"
+    },
+    "deb": {
+      "publish": [
+        {
+          "package": "digital-clock",
+          "repo": "digital-clock-debian",
+          "owner": "jviotti",
+          "provider": "bintray"
+        }
+      ],
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
+      ]
+    },
+    "rpm": {
+      "publish": [
+        {
+          "package": "digital-clock",
+          "repo": "digital-clock-rpm",
+          "owner": "jviotti",
+          "provider": "bintray"
+        }
+      ],
+      "depends": [
+        "GConf2",
+        "libnotify",
+        "nss",
+        "libappindicator",
+        "libXtst"
+      ]
+    },
+    "snap": {
+      "confinement": "strict",
+      "summary": "A minimalistic digital clock rendered in monospace font",
+      "grade": "stable",
+      "stagePackages": [
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3",
+        "libxss1",
+        "fontconfig-config",
+        "gconf2",
+        "libasound2",
+        "pulseaudio"
+      ],
+      "plugs": [
+        "default",
+        "unity8-calendar"
+      ]
+    }
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "release": "build",
+    "postinstall": "install-app-deps",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "1.6.6",
+    "electron-builder": "18.0.1"
+  }
+}

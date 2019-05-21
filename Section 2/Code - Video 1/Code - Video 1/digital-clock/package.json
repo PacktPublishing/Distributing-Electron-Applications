@@ -1,0 +1,41 @@
+{
+  "name": "digital-clock",
+  "version": "1.0.0",
+  "description": "Digital Clock is a dummy Electron application that displays the current time",
+  "author": "John Doe <johndoe@example.com>",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "homepage": "digitalclock.com",
+  "build": {
+    "appId": "com.example.digitalclock",
+    "productName": "Digital Clock",
+    "linux": {
+      "category": "Utils",
+      "icon": "assets/icons",
+      "packageCategory": "utils",
+      "maintainer": "Jane Doe <janedoe@example.com>",
+      "target": [ "deb" ],
+      "synopsis": "A minimalistic digital clock rendered in monospace font"
+    },
+    "deb": {
+      "depends": [
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
+      ]
+    }
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "1.6.6",
+    "electron-builder": "^18.0.1"
+  }
+}

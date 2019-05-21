@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>electron-rebuild example</title>
+</head>
+<body>
+  <h1 id="title"></h1>
+  <script>
+    const helloWorld = require('native-hello-world');
+    document.querySelector("#title").innerHTML = helloWorld.getString();
+  </script>
+</body>
+</html>

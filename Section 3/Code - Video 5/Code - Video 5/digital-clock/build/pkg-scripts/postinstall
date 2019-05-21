@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "=================="
+echo "Postinstall script"
+echo "=================="
+echo "\$0 = $0"
+echo "\$1 = $1"
+echo "\$2 = $2"
+echo "\$3 = $3"
+echo "\$SCRIPT_NAME = $SCRIPT_NAME"
+echo "\$PACKAGE_PATH = $PACKAGE_PATH"
+echo "\$INSTALLER_TEMP = $INSTALLER_TEMP"
+
+echo "Creating symlink in /usr/local/bin..."
+ln -s -f "$2/Digital Clock.app/Contents/MacOS/Digital Clock" /usr/local/bin/digital-clock 

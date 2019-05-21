@@ -1,0 +1,16 @@
+{
+  "name": "native-hello-world",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "configure": "node-gyp configure",
+    "build": "node-gyp build"
+  },
+  "devDependencies": {
+    "node-gyp": "^1.0.3"
+  },
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.0.5"
+  }
+}

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "================="
+echo "Preinstall script"
+echo "================="
+echo "\$0 = $0"
+echo "\$1 = $1"
+echo "\$2 = $2"
+echo "\$3 = $3"
+echo "\$SCRIPT_NAME = $SCRIPT_NAME"
+echo "\$PACKAGE_PATH = $PACKAGE_PATH"
+echo "\$INSTALLER_TEMP = $INSTALLER_TEMP"

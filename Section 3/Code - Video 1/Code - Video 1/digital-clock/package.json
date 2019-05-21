@@ -1,0 +1,50 @@
+{
+  "name": "digital-clock",
+  "version": "1.0.0",
+  "description": "Digital Clock is a dummy Electron application that displays the current time",
+  "author": "John Doe <johndoe@example.com>",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "homepage": "digitalclock.com",
+  "build": {
+    "appId": "com.example.digitalclock",
+    "productName": "Digital Clock",
+    "mac": {
+      "target": [ "dmg" ],
+      "identity": null,
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "dmg": {
+      "background": "assets/background.tiff",
+      "icon": "assets/icon.icns",
+      "iconSize": 100,
+      "window": {
+        "width": 544,
+        "height": 408
+      },
+      "contents": [
+        {
+          "x": 145,
+          "y": 257
+        },
+        {
+          "x": 400,
+          "y": 255,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build",
+    "postinstall": "install-app-deps",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "1.6.6",
+    "electron-builder": "18.0.1"
+  }
+}

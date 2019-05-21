@@ -1,0 +1,14 @@
+{
+  "name": "devdocs",
+  "version": "1.0.0",
+  "description": "DevDocs Electron application",
+  "author": "John Doe <johndoe@example.com>",
+  "license": "Apache-2.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "1.6.6"
+  }
+}
